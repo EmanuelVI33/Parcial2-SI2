@@ -1,7 +1,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.google_mao">
+
+    <!-- Permiso de acceso al estado del proveedor de ubicación -->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <!-- Acceder a ubicacion aproximada -->
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+    <!-- Acceder a ubicacion precisa -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- Permisos de ubicacion de google play -->
+    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+
    <application
         android:label="google_mao"
         android:name="${applicationName}"

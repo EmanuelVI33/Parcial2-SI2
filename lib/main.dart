@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:google_mao/order_traking_page.dart';
+import 'package:google_mao/UI/pages/login/login_page.dart';
+import 'package:google_mao/UI/pages/mapa/mark_route_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
           elevation: 0,
         ),
       ),
-      home: const OrderTrackingPage(),
+      home: const LoginPage(),
     );
   }
 }
