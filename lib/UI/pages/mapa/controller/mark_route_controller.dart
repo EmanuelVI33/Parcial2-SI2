@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_polyline_points/flutter_polyline_points.dart';
-import 'package:google_mao/UI/pages/login/controller/current_position.dart';
+import 'package:google_mao/UI/providers/current_position.dart';
 import 'package:google_mao/constants.dart';
+import 'package:google_mao/domain/response.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class LocationProvider with ChangeNotifier {
@@ -72,11 +73,12 @@ class LocationProvider with ChangeNotifier {
 
   // Actualizar ubicacion
   Future<LatLng?> updateLocation() async {
-    final currentLocation = await CurrentPosition.getCurrentPosition();
-    if (currentLocation != null) {
-      _currentLocation = currentLocation;
+    final Response response = await CurrentPosition.getCurrentPosition();
+
+    if (response.error != null) {
+      _currentLocation = response.data as LatLng;
       notifyListeners();
-    }
+    }   
   }
 
   // Dibujar ruta
